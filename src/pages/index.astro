@@ -1,0 +1,131 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AddToCalendar from '../components/AddToCalendar.astro';
+---
+
+<Layout title="Nirmal & Sumi | 6 & 7 September 2026">
+
+  <section class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 pb-12 overflow-hidden">
+    <div class="absolute top-8 left-8 text-gold opacity-30 text-6xl font-serif leading-none select-none">❧</div>
+    <div class="absolute top-8 right-8 text-gold opacity-30 text-6xl font-serif leading-none select-none" style="transform: scaleX(-1)">❧</div>
+    <div class="absolute bottom-8 left-8 text-gold opacity-30 text-6xl font-serif leading-none select-none" style="transform: scaleY(-1)">❧</div>
+    <div class="absolute bottom-8 right-8 text-gold opacity-30 text-6xl font-serif leading-none select-none" style="transform: rotate(180deg)">❧</div>
+
+    <p class="font-sans text-xs tracking-[0.4em] uppercase text-brown-light mb-8">
+      Please join us as we celebrate
+    </p>
+
+    <h1 class="font-serif font-light text-maroon mb-2" style="font-size: clamp(3.5rem, 10vw, 7rem); line-height: 1.05;">
+      Nirmal
+    </h1>
+    <div class="flex items-center gap-6 my-2">
+      <span class="h-px w-16 md:w-32 bg-gold opacity-60 block"></span>
+      <span class="text-gold text-3xl">✦</span>
+      <span class="h-px w-16 md:w-32 bg-gold opacity-60 block"></span>
+    </div>
+    <h1 class="font-serif font-light text-maroon mb-10" style="font-size: clamp(3.5rem, 10vw, 7rem); line-height: 1.05;">
+      Sumi
+    </h1>
+
+    <p class="font-serif italic text-brown-light text-xl md:text-2xl font-light mb-10">
+      "Journeys of a lifetime begin with a step."
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-6 mb-12">
+      <div class="card text-center px-10 py-6">
+        <p class="font-sans text-xs tracking-widest uppercase text-gold mb-2">Reception</p>
+        <p class="font-serif text-2xl text-maroon">Sunday, 6th September</p>
+        <p class="font-sans text-sm text-brown-light mt-1">6:30 pm – 9:30 pm</p>
+      </div>
+      <div class="card text-center px-10 py-6">
+        <p class="font-sans text-xs tracking-widest uppercase text-gold mb-2">Wedding Ceremony</p>
+        <p class="font-serif text-2xl text-maroon">Monday, 7th September</p>
+        <p class="font-sans text-sm text-brown-light mt-1">9:00 am – 10:30 am</p>
+      </div>
+    </div>
+
+    <p class="font-sans text-sm text-brown-light mb-6">
+      Subhasree Hall, Ramnagar, Coimbatore 641 009
+    </p>
+
+    <div class="mb-10">
+      <AddToCalendar />
+    </div>
+
+    <div id="countdown" class="flex gap-6 md:gap-10 mb-12">
+      <div class="text-center">
+        <p id="days" class="font-serif text-5xl text-maroon font-light">--</p>
+        <p class="font-sans text-xs tracking-widest uppercase text-brown-light mt-1">Days</p>
+      </div>
+      <div class="text-center">
+        <p id="hours" class="font-serif text-5xl text-maroon font-light">--</p>
+        <p class="font-sans text-xs tracking-widest uppercase text-brown-light mt-1">Hours</p>
+      </div>
+      <div class="text-center">
+        <p id="minutes" class="font-serif text-5xl text-maroon font-light">--</p>
+        <p class="font-sans text-xs tracking-widest uppercase text-brown-light mt-1">Minutes</p>
+      </div>
+      <div class="text-center">
+        <p id="seconds" class="font-serif text-5xl text-maroon font-light">--</p>
+        <p class="font-sans text-xs tracking-widest uppercase text-brown-light mt-1">Seconds</p>
+      </div>
+    </div>
+
+    <a href="/rsvp" class="btn-primary">RSVP Now</a>
+  </section>
+
+  <div class="section-divider max-w-3xl mx-auto px-6">
+    <span class="divider-motif">❋</span>
+  </div>
+
+  <section class="max-w-5xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    {[
+      { href: '/our-story', icon: '♥', title: 'Our Story', desc: 'How two worlds became one' },
+      { href: '/schedule', icon: '◆', title: 'Schedule', desc: 'The full programme across both days' },
+      { href: '/travel', icon: '✈', title: 'Travel & Stay', desc: 'Getting to Coimbatore & where to stay' },
+      { href: '/registry', icon: '◈', title: 'Registry', desc: 'Thoughtful gifts we would cherish' },
+    ].map(card => (
+      <a
+        href={card.href}
+        class="card group text-center hover:border-gold hover:border-opacity-70 transition-all duration-300 hover:shadow-md"
+      >
+        <p class="text-gold text-2xl mb-3 group-hover:scale-110 transition-transform duration-300">{card.icon}</p>
+        <p class="font-serif text-xl text-maroon mb-2">{card.title}</p>
+        <p class="font-sans text-sm text-brown-light leading-relaxed">{card.desc}</p>
+      </a>
+    ))}
+  </section>
+
+  <script>
+    function updateCountdown() {
+      const reception = new Date('2026-09-06T18:30:00+05:30');
+      const now = new Date();
+      const diff = reception.getTime() - now.getTime();
+
+      if (diff <= 0) {
+        const el = document.getElementById('countdown');
+        if (el) el.innerHTML = '<p class="font-serif text-2xl text-maroon italic">We\'re getting married today!</p>';
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      const d = document.getElementById('days');
+      const h = document.getElementById('hours');
+      const m = document.getElementById('minutes');
+      const s = document.getElementById('seconds');
+
+      if (d) d.textContent = String(days).padStart(2, '0');
+      if (h) h.textContent = String(hours).padStart(2, '0');
+      if (m) m.textContent = String(minutes).padStart(2, '0');
+      if (s) s.textContent = String(seconds).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+
+</Layout>

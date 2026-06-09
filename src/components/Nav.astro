@@ -1,0 +1,99 @@
+---
+const pathname = Astro.url.pathname;
+
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/our-story', label: 'Our Story' },
+  { href: '/schedule', label: 'Schedule' },
+  { href: '/travel', label: 'Travel' },
+  { href: '/registry', label: 'Registry' },
+  { href: '/faq', label: 'FAQ' },
+  { href: '/guestbook', label: 'Wishes' },
+];
+---
+
+<nav class="w-full bg-cream-light border-b border-gold border-opacity-30 sticky top-0 z-50 shadow-sm">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="font-serif text-2xl text-maroon tracking-widest font-light hover:text-maroon-dark transition-colors">
+      N <span class="text-gold text-lg">✦</span> S
+    </a>
+
+    <ul class="hidden md:flex items-center gap-8">
+      {links.map(link => (
+        <li>
+          <a
+            href={link.href}
+            class={`font-sans text-xs tracking-widest uppercase transition-colors ${
+              pathname === link.href
+                ? 'text-maroon border-b border-maroon pb-0.5'
+                : 'text-brown-mid hover:text-maroon'
+            }`}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+      <li>
+        <a
+          href="/rsvp"
+          class={`font-sans text-xs tracking-widest uppercase transition-all px-4 py-2 ${
+            pathname === '/rsvp'
+              ? 'bg-maroon-dark text-cream-light'
+              : 'bg-maroon text-cream-light hover:bg-maroon-dark'
+          }`}
+        >
+          RSVP
+        </a>
+      </li>
+    </ul>
+
+    <button
+      id="menu-toggle"
+      class="md:hidden flex flex-col gap-1.5 p-2"
+      aria-label="Open menu"
+    >
+      <span class="w-6 h-px bg-brown block transition-all" id="bar1"></span>
+      <span class="w-6 h-px bg-brown block transition-all" id="bar2"></span>
+      <span class="w-4 h-px bg-brown block transition-all" id="bar3"></span>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden bg-cream-light border-t border-gold border-opacity-20">
+    <ul class="flex flex-col py-4">
+      {links.map(link => (
+        <li>
+          <a
+            href={link.href}
+            class={`block px-6 py-3 font-sans text-xs tracking-widest uppercase transition-colors ${
+              pathname === link.href ? 'text-maroon bg-cream-dark' : 'text-brown-mid hover:text-maroon hover:bg-cream'
+            }`}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+      <li>
+        <a
+          href="/rsvp"
+          class={`block px-6 py-3 font-sans text-xs tracking-widest uppercase transition-colors ${
+            pathname === '/rsvp' ? 'text-maroon bg-cream-dark' : 'text-brown-mid hover:text-maroon hover:bg-cream'
+          }`}
+        >
+          RSVP
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const bar3 = document.getElementById('bar3');
+
+  toggle?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    bar3?.classList.toggle('w-6');
+    bar3?.classList.toggle('w-4');
+  });
+</script>

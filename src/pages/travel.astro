@@ -1,0 +1,125 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const howToReach = [
+  {
+    icon: '✈',
+    mode: 'By Air',
+    detail: 'Coimbatore International Airport (CJB) is about 15 km from the venue. Pre-book a cab or use Uber/Ola — the ride is around 30–40 minutes.',
+  },
+  {
+    icon: '🚂',
+    mode: 'By Train',
+    detail: 'Coimbatore Junction is the main railway station, well-connected to Chennai, Bangalore, Mumbai, Hyderabad and most major cities. Auto-rickshaws and cabs are available right outside the station.',
+  },
+  {
+    icon: '🚌',
+    mode: 'By Bus',
+    detail: 'TNSTC and private luxury bus services (SRS, KSRTC, Parveen) connect Coimbatore with major Tamil Nadu cities and Bangalore. The CMBT bus stand is centrally located and walkable to most hotels.',
+  },
+];
+---
+
+<Layout title="Travel & Stay | Nirmal & Sumi">
+
+  <section class="text-center py-20 px-6">
+    <p class="font-sans text-xs tracking-[0.4em] uppercase text-gold mb-4">Getting here</p>
+    <h1 class="section-title">Travel & Stay</h1>
+    <div class="section-divider max-w-xs mx-auto mt-6">
+      <span class="divider-motif">❋</span>
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 pb-16">
+    <div class="card overflow-hidden p-0">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.4!2d77.0!3d11.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sSubhasree+Hall+Ramnagar+Coimbatore!5e0!3m2!1sen!2sin!4v1"
+        width="100%"
+        height="280"
+        style="border:0; display:block;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Subhasree Hall, Coimbatore"
+      ></iframe>
+      <div class="p-8 text-center">
+        <p class="font-sans text-xs tracking-widest uppercase text-gold mb-3">Wedding Venue</p>
+        <h2 class="font-serif text-3xl text-maroon font-light mb-2">Subhasree Hall</h2>
+        <p class="font-sans text-brown-light mb-6">Ramnagar, Coimbatore 641 009, Tamil Nadu, India</p>
+        <a
+          href="https://maps.google.com/?q=Subhasree+Hall+Ramnagar+Coimbatore"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary"
+        >
+          Open in Google Maps ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-3xl mx-auto px-6"><span class="divider-motif">◆</span></div>
+
+  <section class="max-w-4xl mx-auto px-6 py-16">
+    <div class="card bg-maroon bg-opacity-5 border-maroon border-opacity-20 text-center">
+      <p class="font-sans text-xs tracking-widest uppercase text-gold mb-3">For guests flying in</p>
+      <h2 class="font-serif text-2xl text-maroon font-light mb-3">Accommodation</h2>
+      <p class="font-sans text-sm text-brown-light leading-relaxed max-w-xl mx-auto">
+        We're arranging a block of rooms in a nearby service apartment for guests who are flying in. If you need accommodation, please let us know when you RSVP and we'll get you sorted.
+      </p>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-3xl mx-auto px-6"><span class="divider-motif">◆</span></div>
+
+  <section class="max-w-4xl mx-auto px-6 py-16">
+    <h2 class="font-serif text-3xl text-maroon text-center font-light mb-10">Getting to Coimbatore</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      {howToReach.map(item => (
+        <div class="card text-center">
+          <p class="text-3xl mb-3">{item.icon}</p>
+          <p class="font-serif text-xl text-maroon mb-3">{item.mode}</p>
+          <p class="font-sans text-sm text-brown-light leading-relaxed">{item.detail}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-cream-dark py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-3xl text-maroon text-center font-light mb-10">While You're in Coimbatore</h2>
+      <div class="grid sm:grid-cols-2 gap-8 font-sans text-sm text-brown-light">
+
+        <div class="space-y-3">
+          <p class="font-serif text-maroon text-xl">Getting Around</p>
+          <p>
+            Uber and Ola work reliably across Coimbatore and are the easiest option for airport and inter-city travel. Auto-rickshaws are plentiful and great for short hops — always agree on a fare before you get in, or insist on the meter. The city isn't walkable in the traditional sense but distances between key areas are short, and most rides cost under ₹150.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <p class="font-serif text-maroon text-xl">Food & Drink</p>
+          <p>
+            Coimbatore is a paradise for South Indian vegetarian food. Start your mornings with idli and dosa at Annapoorna or Sree Annapoorna — local institutions that have been serving flawless breakfasts for decades. Filter coffee is a religion here; order it as a decoction-milk combo and don't rush it. For something heartier, the Chettinad and Tamil Brahmin thali spots around the city are extraordinary. If you eat meat, the local Kongu-style chicken dishes are worth seeking out.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <p class="font-serif text-maroon text-xl">Weather in September</p>
+          <p>
+            September sits at the tail end of the south-west monsoon, so expect warm, humid days around 27–32°C with occasional afternoon showers. The rain rarely lasts long and usually cools things down nicely. Pack light, breathable fabrics — cotton and linen work best. Carry a small umbrella or a light shawl, and you'll be perfectly comfortable. Evenings are pleasant, especially outdoors.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <p class="font-serif text-maroon text-xl">What to Explore</p>
+          <p>
+            If you have a day to spare, Coimbatore punches well above its tourist profile. Marudhamalai Temple on the city's outskirts is a stunning hilltop Murugan shrine worth the climb. The Dhyanalinga meditation centre in Isha is a genuinely serene hour-long experience. Brookefields and Prozone malls are good for casual shopping. And if you want to escape the city, Ooty and Valparai are both within two hours — the drive through tea plantations is worth it on its own.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</Layout>

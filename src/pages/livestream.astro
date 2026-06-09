@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const STREAM_URL = '';
+---
+
+<Layout title="Livestream | Nirmal & Sumi">
+
+  <section class="text-center py-20 px-6">
+    <p class="font-sans text-xs tracking-[0.4em] uppercase text-gold mb-4">Watch live</p>
+    <h1 class="section-title">Livestream</h1>
+    <div class="section-divider max-w-xs mx-auto mt-6">
+      <span class="divider-motif">❋</span>
+    </div>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-6 pb-20">
+    {STREAM_URL ? (
+      <div class="aspect-video w-full bg-brown">
+        <iframe
+          src={STREAM_URL}
+          width="100%"
+          height="100%"
+          frameborder="0"
+          allowfullscreen
+          class="block w-full h-full"
+          title="Wedding Livestream"
+        ></iframe>
+      </div>
+    ) : (
+      <div class="card text-center py-20">
+        <p class="text-gold text-4xl mb-6">◈</p>
+        <h2 class="font-serif text-2xl text-maroon font-light mb-4">Link coming soon</h2>
+        <p class="font-sans text-sm text-brown-light leading-relaxed max-w-md mx-auto mb-8">
+          The livestream link will appear here closer to the date. We'll also share it via WhatsApp for guests who are joining remotely.
+        </p>
+        <p class="font-sans text-xs text-brown-light">
+          The ceremony will be streamed live on <strong class="text-brown">7th September 2026 from 9:00am IST</strong>.
+        </p>
+      </div>
+    )}
+  </section>
+
+  <section class="bg-cream-dark py-16 px-6">
+    <div class="max-w-2xl mx-auto grid sm:grid-cols-2 gap-6">
+      <div class="card text-center">
+        <p class="font-sans text-xs tracking-widest uppercase text-gold mb-2">Going live</p>
+        <p class="font-serif text-xl text-maroon">7th September 2026</p>
+        <p class="font-sans text-sm text-brown-light mt-2">9:00 am IST</p>
+      </div>
+      <div class="card text-center">
+        <p class="font-sans text-xs tracking-widest uppercase text-gold mb-2">Duration</p>
+        <p class="font-serif text-xl text-maroon">Approx. 90 minutes</p>
+        <p class="font-sans text-sm text-brown-light mt-2">Ceremony ends ~10:30 am</p>
+      </div>
+    </div>
+  </section>
+
+</Layout>

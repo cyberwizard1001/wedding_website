@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+import items from '../data/registry.json';
+
+const EMAIL = 'nirmalkarthikeyan1503@gmail.com';
+---
+
+<Layout title="Registry | Nirmal & Sumi">
+
+  <section class="text-center py-20 px-6">
+    <p class="font-sans text-xs tracking-[0.4em] uppercase text-gold mb-4">Gift Registry</p>
+    <h1 class="section-title">Registry</h1>
+    <div class="section-divider max-w-xs mx-auto mt-6">
+      <span class="divider-motif">❋</span>
+    </div>
+    <div class="max-w-xl mx-auto mt-6 space-y-2">
+      <p class="font-sans text-sm text-brown-light leading-relaxed">
+        Your presence at our wedding is the greatest gift. But if you'd like to give something, here are a few things we'd truly cherish.
+      </p>
+      <p class="font-sans text-sm text-brown-light leading-relaxed">
+        To claim a gift, click <strong class="text-brown">"I'd like to give this"</strong> — it'll open an email to us with the item pre-filled. We'll confirm receipt and mark it as claimed.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-6 pb-20">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {items.map(item => (
+        <div class={`card flex flex-col relative ${item.claimed ? 'opacity-50' : ''}`}>
+          {item.claimed && (
+            <div class="absolute inset-0 flex items-center justify-center z-10">
+              <span class="font-serif text-maroon text-2xl border-2 border-maroon px-4 py-2 rotate-[-8deg] bg-cream-light bg-opacity-90">
+                Claimed ✓
+              </span>
+            </div>
+          )}
+
+          <p class="font-sans text-xs tracking-widest uppercase text-gold mb-3">{item.priceRange}</p>
+          <h3 class="font-serif text-xl text-maroon mb-2">{item.name}</h3>
+          <p class="font-sans text-sm text-brown-light leading-relaxed mb-6 flex-1">{item.description}</p>
+
+          {!item.claimed ? (
+            <a
+              href={`mailto:${EMAIL}?subject=Registry: ${encodeURIComponent(item.name)}&body=Hi Nirmal and Sumi!%0A%0AI'd love to gift you: ${encodeURIComponent(item.name)}%0A%0APlease mark this as claimed on your registry.%0A%0ALooking forward to the wedding!%0A%0A[Your name]`}
+              class="btn-outline block w-full text-center text-xs"
+            >
+              I'd like to give this ♥
+            </a>
+          ) : (
+            <span class="text-center font-sans text-xs tracking-widest uppercase text-brown-light py-3">
+              Already claimed
+            </span>
+          )}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-cream-dark py-16 px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <div class="section-divider mb-8"><span class="divider-motif">◆</span></div>
+      <h2 class="font-serif text-2xl text-maroon font-light mb-6">How This Works</h2>
+      <div class="font-sans text-sm text-brown-light space-y-4 text-left max-w-lg mx-auto">
+        <p><strong class="text-brown">1. Choose a gift</strong> — click "I'd like to give this" on any unclaimed item.</p>
+        <p><strong class="text-brown">2. Send the email</strong> — your email app will open with everything pre-filled. Just add your name and send!</p>
+        <p><strong class="text-brown">3. We confirm</strong> — we'll reply to confirm and mark the item as claimed on this page.</p>
+        <p><strong class="text-brown">Note:</strong> Multiple items can be gifted together. If you'd like to contribute to an item rather than gift it alone, just let us know in the email.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-2xl mx-auto px-6 py-16 text-center">
+    <p class="font-sans text-xs tracking-widest uppercase text-gold mb-4">Cash Gift</p>
+    <h2 class="font-serif text-2xl text-maroon font-light mb-4">Prefer to Give Cash?</h2>
+    <p class="font-sans text-sm text-brown-light leading-relaxed mb-6">
+      A cash contribution towards our home would mean a great deal. Please reach out to us directly and we'll share our UPI or bank details.
+    </p>
+    <a
+      href={`mailto:${EMAIL}?subject=Cash Gift&body=Hi Nirmal and Sumi! I'd like to give a cash gift. Please share your payment details.%0A%0A[Your name]`}
+      class="btn-primary"
+    >
+      Get in Touch
+    </a>
+  </section>
+
+</Layout>

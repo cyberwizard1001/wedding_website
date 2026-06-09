@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import wishes from '../data/wishes.json';
+
+const TALLY_WISH_URL = 'https://tally.so/r/YOUR_WISH_FORM_ID';
+const TALLY_EMBED = `${TALLY_WISH_URL}?transparentBackground=1`;
+---
+
+<Layout title="Leave a Wish | Nirmal & Sumi">
+
+  <section class="text-center py-20 px-6">
+    <p class="font-sans text-xs tracking-[0.4em] uppercase text-gold mb-4">From you, with love</p>
+    <h1 class="section-title">Leave a Wish</h1>
+    <div class="section-divider max-w-xs mx-auto mt-6">
+      <span class="divider-motif">❋</span>
+    </div>
+    <p class="font-sans text-sm text-brown-light mt-4 max-w-md mx-auto">
+      Leave us a message, a memory, or a wish for the road ahead. We'll keep every word.
+    </p>
+  </section>
+
+  <section class="max-w-2xl mx-auto px-6 pb-16">
+    <div class="card p-0 overflow-hidden">
+      {TALLY_WISH_URL.includes('YOUR_WISH_FORM_ID') ? (
+        <div class="text-center py-16 px-8">
+          <p class="font-serif text-2xl text-maroon mb-4">Wish form coming soon</p>
+          <p class="font-sans text-sm text-brown-light leading-relaxed">
+            Create a Tally form with fields for name and message, then replace <code class="bg-cream-dark px-1 py-0.5 text-xs">YOUR_WISH_FORM_ID</code> in <code class="bg-cream-dark px-1 py-0.5 text-xs">src/pages/guestbook.astro</code>.
+          </p>
+        </div>
+      ) : (
+        <iframe
+          src={TALLY_EMBED}
+          width="100%"
+          height="400"
+          frameborder="0"
+          title="Leave a Wish"
+          class="block"
+        ></iframe>
+      )}
+    </div>
+  </section>
+
+  {wishes.length > 0 && (
+    <>
+      <div class="section-divider max-w-3xl mx-auto px-6">
+        <span class="divider-motif">◆</span>
+      </div>
+
+      <section class="max-w-4xl mx-auto px-6 py-16">
+        <p class="font-sans text-xs tracking-[0.4em] uppercase text-gold text-center mb-12">Wishes from our people</p>
+        <div class="columns-1 sm:columns-2 gap-6 space-y-6">
+          {wishes.map((wish: { name: string; message: string; relation?: string }) => (
+            <div class="card break-inside-avoid">
+              <p class="font-serif text-lg text-brown leading-relaxed mb-4 italic">"{wish.message}"</p>
+              <div>
+                <p class="font-sans text-sm text-maroon font-medium">{wish.name}</p>
+                {wish.relation && (
+                  <p class="font-sans text-xs text-brown-light">{wish.relation}</p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </>
+  )}
+
+  {wishes.length === 0 && (
+    <section class="max-w-2xl mx-auto px-6 py-8 text-center pb-20">
+      <p class="font-sans text-xs text-brown-light italic">
+        Wishes will appear here as they come in.
+      </p>
+    </section>
+  )}
+
+</Layout>

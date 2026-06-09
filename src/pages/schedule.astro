@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AddToCalendar from '../components/AddToCalendar.astro';
+
+const day1 = {
+  date: 'Sunday, 6th September 2026',
+  label: 'Reception',
+  events: [
+    { time: '6:30 pm', title: 'Doors Open', desc: 'Welcome drinks and mingling as guests arrive.' },
+    { time: '7:00 pm', title: 'Reception Begins', desc: 'Formal gathering to celebrate Nirmal & Sumi.' },
+    { time: '8:00 pm', title: 'Dinner', desc: 'A traditional South Indian feast for family and friends.' },
+    { time: '9:30 pm', title: 'Evening Ends', desc: 'Farewell and see you at the ceremony tomorrow!' },
+  ],
+};
+
+const day2 = {
+  date: 'Monday, 7th September 2026',
+  label: 'Wedding Ceremony',
+  events: [
+    { time: '8:30 am', title: 'Guests Arrive', desc: 'Doors open for seating before the ceremony.' },
+    { time: '9:00 am', title: 'Ceremony Begins', desc: 'The muhurtham — the auspicious moment of the wedding.' },
+    { time: '10:00 am', title: 'Tying of the Thali', desc: 'The sacred moment as Nirmal ties the mangalsutra.' },
+    { time: '10:30 am', title: 'Blessings & Celebrations', desc: 'Family blessings, photographs, and light refreshments.' },
+  ],
+};
+---
+
+<Layout title="Schedule | Nirmal & Sumi">
+
+  <section class="text-center py-20 px-6">
+    <p class="font-sans text-xs tracking-[0.4em] uppercase text-gold mb-4">6 & 7 September 2026</p>
+    <h1 class="section-title">The Programme</h1>
+    <div class="section-divider max-w-xs mx-auto mt-6">
+      <span class="divider-motif">❋</span>
+    </div>
+    <p class="font-sans text-sm text-brown-light mt-4 max-w-md mx-auto mb-8">
+      All events are held at Subhasree Hall, Ramnagar, Coimbatore 641 009
+    </p>
+    <AddToCalendar />
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 pb-20 grid md:grid-cols-2 gap-10">
+    {[day1, day2].map((day) => (
+      <div>
+        <div class="bg-maroon text-cream-light p-6 mb-6">
+          <p class="font-sans text-xs tracking-widest uppercase text-gold mb-1">{day.label}</p>
+          <p class="font-serif text-2xl font-light">{day.date}</p>
+        </div>
+
+        <div>
+          {day.events.map((event, ei) => (
+            <div class="flex gap-4 pb-8">
+              <div class="shrink-0 w-16 pt-1">
+                <p class="font-sans text-xs text-brown-light text-right leading-tight">{event.time}</p>
+              </div>
+              <div class="shrink-0 flex flex-col items-center mt-1.5">
+                <div class="w-3 h-3 rounded-full bg-gold border-2 border-cream shrink-0"></div>
+                {ei < day.events.length - 1 && (
+                  <div class="w-px bg-gold opacity-20 flex-1 mt-1"></div>
+                )}
+              </div>
+              <div class="bg-cream-light border border-gold border-opacity-20 px-5 py-4 flex-1 shadow-sm">
+                <p class="font-serif text-lg text-maroon leading-tight">{event.title}</p>
+                <p class="font-sans text-sm text-brown-light mt-1 leading-relaxed">{event.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </section>
+
+  <section class="bg-cream-dark py-16 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="font-sans text-xs tracking-widest uppercase text-gold mb-4">Venue</p>
+      <h2 class="font-serif text-3xl text-maroon font-light mb-2">Subhasree Hall</h2>
+      <p class="font-sans text-brown-light mb-8">Ramnagar, Coimbatore 641 009, Tamil Nadu</p>
+      <a
+        href="https://maps.google.com/?q=Subhasree+Hall+Ramnagar+Coimbatore"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-primary"
+      >
+        Get Directions ↗
+      </a>
+    </div>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-6 py-12 text-center">
+    <div class="card inline-flex flex-col sm:flex-row items-center gap-6 text-left">
+      <p class="text-gold text-3xl shrink-0">◈</p>
+      <div>
+        <p class="font-serif text-lg text-maroon mb-1">Can't make it in person?</p>
+        <p class="font-sans text-sm text-brown-light leading-relaxed">
+          The ceremony will be livestreamed. The link will be shared closer to the date.
+          <a href="/livestream" class="text-maroon underline ml-1">Livestream page →</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-2xl mx-auto px-6 py-16 text-center">
+    <div class="section-divider mb-8"><span class="divider-motif">◆</span></div>
+    <p class="font-sans text-xs tracking-widest uppercase text-gold mb-4">Dress Code</p>
+    <p class="font-serif text-xl text-maroon font-light mb-4">Traditional or Semi-Formal</p>
+    <p class="font-sans text-sm text-brown-light leading-relaxed">
+      We'd love for guests to embrace traditional South Indian attire if you'd like — sarees, salwar kameez, dhotis, or suits are all equally welcome. The palette of our wedding leans warm — think earth tones, gold, and deep jewel colours.
+    </p>
+  </section>
+
+</Layout>

@@ -1,0 +1,123 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqs = [
+  {
+    category: 'The Events',
+    questions: [
+      {
+        q: 'Do I need to attend both days?',
+        a: 'Not at all — each event stands on its own. The reception on the 6th is an evening celebration for everyone, while the ceremony on the 7th morning is the formal ritual. If you can only make one, either is wonderful to have you at.',
+      },
+      {
+        q: 'When should I arrive?',
+        a: 'For the reception, doors open at 6:30pm — arriving within the first 30 minutes is ideal. For the ceremony, please arrive by 8:30am as the muhurtham begins at 9:00am sharp and the auspicious timing cannot be moved.',
+      },
+      {
+        q: 'Is there a seating arrangement?',
+        a: 'Anywhere you like! Fully up to you — the stage is ours though.',
+      },
+    ],
+  },
+  {
+    category: 'Food & Drink',
+    questions: [
+      {
+        q: 'What food will be served?',
+        a: 'Both events will feature a traditional South Indian spread — think rice, sambhar, rasam, a variety of curries, kootu, and sweets. The reception will also have starters and a live counter. Everything served is vegetarian.',
+      },
+    ],
+  },
+  {
+    category: 'At the Venue',
+    questions: [
+      {
+        q: 'Is parking available?',
+        a: 'Yes, there is parking at and around Subhasree Hall. If you are coming from a hotel, we recommend taking a cab to avoid any parking stress — especially for the morning ceremony.',
+      },
+      {
+        q: 'Can I bring children?',
+        a: 'Absolutely — children are very welcome at both events. The ceremony in particular is a great experience for kids who haven\'t attended a South Indian wedding before.',
+      },
+      {
+        q: 'Can I take photos during the ceremony?',
+        a: 'We have a professional photographer covering both events. During the muhurtham itself, we\'d love for you to be present in the moment rather than behind a phone — but you\'re welcome to take photos during the procession, arrival, and after the rituals. We will share a photo album with everyone after the wedding.',
+      },
+      {
+        q: 'Can I share my photos with you?',
+        a: 'Please do — we\'d absolutely love that! We\'re setting up a way for guests to share pictures with us and we\'ll share the link closer to the date.',
+      },
+    ],
+  },
+  {
+    category: 'The Ceremony',
+    questions: [
+      {
+        q: 'What happens at a South Indian wedding ceremony?',
+        a: 'A Tamil Brahmin wedding is a deeply ritual ceremony conducted by a priest in Sanskrit. Key moments include the exchange of garlands (maalai maatral), the tying of the sacred thread (thali), and the couple taking seven steps together (saptapadi). The whole ceremony takes about 90 minutes. You do not need to understand Sanskrit to feel its significance — it\'s a moving experience regardless.',
+      },
+      {
+        q: 'Is there anything I should know before attending?',
+        a: 'It\'s customary to remove footwear before entering the ceremony mandap area. If you\'re wearing traditional attire, you\'re already dressed perfectly. Silence your phone during the muhurtham, and feel free to ask any family member if you\'re unsure about anything — everyone will be happy to help.',
+      },
+    ],
+  },
+  {
+    category: 'Practical',
+    questions: [
+      {
+        q: 'I\'m travelling from abroad — anything I should know?',
+        a: 'Coimbatore is well connected by air from Chennai, Bangalore, Mumbai, and international hubs via connection. September is the tail end of monsoon season — warm, occasionally rainy, always manageable. IST is UTC+5:30. The city is easy to navigate with app cabs.',
+      },
+      {
+        q: 'Where can I stay?',
+        a: 'We\'re arranging a block of service apartment rooms for guests flying in. Please mention your travel dates when you RSVP and we\'ll sort your accommodation. For more on getting to Coimbatore, see the Travel page.',
+      },
+      {
+        q: 'I have a question not answered here.',
+        a: 'Write to us at nirmalkarthikeyan1503@gmail.com and we\'ll get back to you.',
+      },
+    ],
+  },
+];
+---
+
+<Layout title="FAQ | Nirmal & Sumi">
+
+  <section class="text-center py-20 px-6">
+    <p class="font-sans text-xs tracking-[0.4em] uppercase text-gold mb-4">Everything you need to know</p>
+    <h1 class="section-title">FAQ</h1>
+    <div class="section-divider max-w-xs mx-auto mt-6">
+      <span class="divider-motif">❋</span>
+    </div>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-6 pb-20 space-y-14">
+    {faqs.map(section => (
+      <div>
+        <p class="font-sans text-xs tracking-widest uppercase text-gold mb-6">{section.category}</p>
+        <div class="space-y-0 border-t border-gold border-opacity-20">
+          {section.questions.map(item => (
+            <details class="group border-b border-gold border-opacity-20">
+              <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none">
+                <p class="font-serif text-lg text-maroon font-light">{item.q}</p>
+                <span class="text-gold shrink-0 text-xl transition-transform duration-200 group-open:rotate-45">+</span>
+              </summary>
+              <p class="font-sans text-sm text-brown-light leading-relaxed pb-6">{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    ))}
+  </section>
+
+  <section class="bg-cream-dark py-16 px-6 text-center">
+    <p class="font-sans text-xs tracking-widest uppercase text-gold mb-4">Still have questions?</p>
+    <h2 class="font-serif text-2xl text-maroon font-light mb-4">Get in touch</h2>
+    <p class="font-sans text-sm text-brown-light mb-6">
+      We're happy to help with anything not covered above.
+    </p>
+    <a href="mailto:nirmalkarthikeyan1503@gmail.com" class="btn-primary">Email Us</a>
+  </section>
+
+</Layout>
