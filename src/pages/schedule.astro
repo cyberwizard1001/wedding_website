@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import AddToCalendar from '../components/AddToCalendar.astro';
+import { withBase } from '../utils/base';
 
 const day1 = {
   date: 'Sunday, 6th September 2026',
@@ -93,7 +94,7 @@ const day2 = {
         <p class="font-serif text-lg text-maroon mb-1">Can't make it in person?</p>
         <p class="font-sans text-sm text-brown-light leading-relaxed">
           The ceremony will be livestreamed. The link will be shared closer to the date.
-          <a href="/livestream" class="text-maroon underline ml-1">Livestream page →</a>
+          <a href={withBase('/livestream')} class="text-maroon underline ml-1">Livestream page →</a>
         </p>
       </div>
     </div>

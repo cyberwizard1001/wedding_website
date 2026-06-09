@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../utils/base';
+
 const receptionGoogle = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
   + '&text=Nirmal+%26+Sumi+%E2%80%94+Reception'
   + '&dates=20260906T130000Z/20260906T160000Z'
@@ -29,7 +31,7 @@ const ceremonyGoogle = 'https://calendar.google.com/calendar/render?action=TEMPL
     role="menu"
   >
     <a
-      href="/wedding.ics"
+      href={withBase('/wedding.ics')}
       download="Nirmal-Sumi-Wedding.ics"
       class="flex items-start gap-3 px-4 py-3 hover:bg-cream transition-colors group border-b border-gold border-opacity-20"
       role="menuitem"
@@ -52,7 +54,7 @@ const ceremonyGoogle = 'https://calendar.google.com/calendar/render?action=TEMPL
           Google Calendar
         </a>
         <span class="text-gold opacity-40">·</span>
-        <a href="/reception.ics" download="Nirmal-Sumi-Reception.ics"
+        <a href={withBase('/reception.ics')} download="Nirmal-Sumi-Reception.ics"
           class="font-sans text-xs text-maroon underline hover:text-maroon-dark transition-colors">
           Apple / Outlook
         </a>
@@ -67,7 +69,7 @@ const ceremonyGoogle = 'https://calendar.google.com/calendar/render?action=TEMPL
           Google Calendar
         </a>
         <span class="text-gold opacity-40">·</span>
-        <a href="/ceremony.ics" download="Nirmal-Sumi-Ceremony.ics"
+        <a href={withBase('/ceremony.ics')} download="Nirmal-Sumi-Ceremony.ics"
           class="font-sans text-xs text-maroon underline hover:text-maroon-dark transition-colors">
           Apple / Outlook
         </a>

@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../utils/base';
+
 const pathname = Astro.url.pathname;
 
 const links = [
@@ -14,7 +16,7 @@ const links = [
 
 <nav class="w-full bg-cream-light border-b border-gold border-opacity-30 sticky top-0 z-50 shadow-sm">
   <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="/" class="font-serif text-2xl text-maroon tracking-widest font-light hover:text-maroon-dark transition-colors">
+    <a href={withBase('/')} class="font-serif text-2xl text-maroon tracking-widest font-light hover:text-maroon-dark transition-colors">
       N <span class="text-gold text-lg">✦</span> S
     </a>
 
@@ -22,9 +24,9 @@ const links = [
       {links.map(link => (
         <li>
           <a
-            href={link.href}
+            href={withBase(link.href)}
             class={`font-sans text-xs tracking-widest uppercase transition-colors ${
-              pathname === link.href
+              pathname === withBase(link.href)
                 ? 'text-maroon border-b border-maroon pb-0.5'
                 : 'text-brown-mid hover:text-maroon'
             }`}
@@ -35,9 +37,9 @@ const links = [
       ))}
       <li>
         <a
-          href="/rsvp"
+          href={withBase('/rsvp')}
           class={`font-sans text-xs tracking-widest uppercase transition-all px-4 py-2 ${
-            pathname === '/rsvp'
+            pathname === withBase('/rsvp')
               ? 'bg-maroon-dark text-cream-light'
               : 'bg-maroon text-cream-light hover:bg-maroon-dark'
           }`}
@@ -63,9 +65,9 @@ const links = [
       {links.map(link => (
         <li>
           <a
-            href={link.href}
+            href={withBase(link.href)}
             class={`block px-6 py-3 font-sans text-xs tracking-widest uppercase transition-colors ${
-              pathname === link.href ? 'text-maroon bg-cream-dark' : 'text-brown-mid hover:text-maroon hover:bg-cream'
+              pathname === withBase(link.href) ? 'text-maroon bg-cream-dark' : 'text-brown-mid hover:text-maroon hover:bg-cream'
             }`}
           >
             {link.label}
@@ -74,9 +76,9 @@ const links = [
       ))}
       <li>
         <a
-          href="/rsvp"
+          href={withBase('/rsvp')}
           class={`block px-6 py-3 font-sans text-xs tracking-widest uppercase transition-colors ${
-            pathname === '/rsvp' ? 'text-maroon bg-cream-dark' : 'text-brown-mid hover:text-maroon hover:bg-cream'
+            pathname === withBase('/rsvp') ? 'text-maroon bg-cream-dark' : 'text-brown-mid hover:text-maroon hover:bg-cream'
           }`}
         >
           RSVP
