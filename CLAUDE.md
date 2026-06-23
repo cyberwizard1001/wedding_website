@@ -24,6 +24,15 @@ npm run preview  # preview production build
 - `src/styles/global.css` — global styles
 - `public/` — static assets (calendar `.ics` files, favicon, invite image)
 
+## Editing the gift registry
+
+`src/data/registry.json` is the source of truth for the Registry page — no code change needed to add, remove, or edit items.
+
+- Each entry needs `name`, `description`, `priceRange`.
+- Omit `claimed` (or leave it out) for an open item; add `"claimed": true` once someone's claimed it.
+- No `id` field — order in the array is the display order.
+- Edit the JSON, commit, push — Cloudflare Pages rebuilds and the live site updates automatically.
+
 ## Conventions
 
 - Theme colors (cream, maroon, gold, brown, teal) and fonts (Cormorant Garamond serif, Lato sans) are defined in `tailwind.config.mjs` — reuse these tokens rather than introducing new colors/fonts.

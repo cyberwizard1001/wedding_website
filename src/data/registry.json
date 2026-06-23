@@ -1,86 +1,62 @@
 [
   {
-    "id": 1,
     "name": "Dinner Set (8 persons)",
     "description": "A complete ceramic or porcelain dinner set for 8 — we're setting up a proper home together.",
-    "priceRange": "₹8,000 – ₹15,000",
-    "claimed": false
+    "priceRange": "₹8,000 – ₹15,000"
   },
   {
-    "id": 2,
     "name": "KitchenAid Stand Mixer",
     "description": "For all the baking adventures we've been planning. Any colour works!",
-    "priceRange": "₹20,000 – ₹35,000",
-    "claimed": false
+    "priceRange": "₹20,000 – ₹35,000"
   },
   {
-    "id": 3,
     "name": "Instant Pot / Pressure Cooker",
     "description": "A quality electric pressure cooker or Instant Pot for everyday South Indian cooking.",
-    "priceRange": "₹5,000 – ₹10,000",
-    "claimed": false
+    "priceRange": "₹5,000 – ₹10,000"
   },
   {
-    "id": 4,
     "name": "Coffee Machine",
     "description": "We run on filter coffee. A good drip or bean-to-cup machine would be a dream.",
-    "priceRange": "₹8,000 – ₹20,000",
-    "claimed": false
+    "priceRange": "₹8,000 – ₹20,000"
   },
   {
-    "id": 5,
     "name": "Art for the Home",
     "description": "A piece of original art — painting, print, or textile — that could live on our walls.",
-    "priceRange": "₹3,000 – ₹10,000",
-    "claimed": false
+    "priceRange": "₹3,000 – ₹10,000"
   },
   {
-    "id": 6,
     "name": "Hotel Stay / Weekend Getaway",
     "description": "A contribution towards a mini-honeymoon or weekend escape. Any amount is welcome.",
-    "priceRange": "₹5,000+",
-    "claimed": false
+    "priceRange": "₹5,000+"
   },
   {
-    "id": 7,
     "name": "Cutlery Set",
     "description": "A proper set of stainless steel or silver-plated cutlery for everyday use and hosting.",
-    "priceRange": "₹3,000 – ₹8,000",
-    "claimed": false
+    "priceRange": "₹3,000 – ₹8,000"
   },
   {
-    "id": 8,
     "name": "Bookshelf / Books",
     "description": "We love to read — a beautiful bookshelf, or a curated stack of books you love and think we'd love too.",
-    "priceRange": "₹2,000 – ₹12,000",
-    "claimed": false
+    "priceRange": "₹2,000 – ₹12,000"
   },
   {
-    "id": 9,
     "name": "Indoor Plants & Pots",
     "description": "We'd love to fill our home with greenery. Potted plants or a set of beautiful ceramic planters.",
-    "priceRange": "₹1,500 – ₹5,000",
-    "claimed": false
+    "priceRange": "₹1,500 – ₹5,000"
   },
   {
-    "id": 10,
     "name": "Linen Set (Bedsheets & Pillowcases)",
     "description": "High thread count cotton or linen bedsheets — king or queen size.",
-    "priceRange": "₹4,000 – ₹10,000",
-    "claimed": false
+    "priceRange": "₹4,000 – ₹10,000"
   },
   {
-    "id": 11,
     "name": "Cast Iron Cookware",
     "description": "A Lodge or Le Creuset cast iron skillet or Dutch oven for slow cooking.",
-    "priceRange": "₹5,000 – ₹18,000",
-    "claimed": false
+    "priceRange": "₹5,000 – ₹18,000"
   },
   {
-    "id": 12,
     "name": "Contribution to Our Home",
     "description": "If you'd like to give us a cash gift towards setting up our home, we'd be truly grateful. We'll put it towards something we'll use every day.",
-    "priceRange": "Any amount",
-    "claimed": false
+    "priceRange": "Any amount"
   }
 ]
