@@ -2,8 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import wishes from '../data/wishes.json';
 
-const TALLY_WISH_URL = 'https://tally.so/r/YOUR_WISH_FORM_ID';
-const TALLY_EMBED = `${TALLY_WISH_URL}?transparentBackground=1`;
+const TALLY_WISH_URL = 'https://tally.so/r/9qxYyQ';
+const TALLY_EMBED = `${TALLY_WISH_URL}?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1`;
 ---
 
 <Layout title="Leave a Wish | Nirmal & Sumi">
@@ -30,16 +30,36 @@ const TALLY_EMBED = `${TALLY_WISH_URL}?transparentBackground=1`;
         </div>
       ) : (
         <iframe
-          src={TALLY_EMBED}
+          data-tally-src={TALLY_EMBED}
+          loading="lazy"
           width="100%"
-          height="400"
+          height="447"
           frameborder="0"
+          marginheight="0"
+          marginwidth="0"
           title="Leave a Wish"
           class="block"
         ></iframe>
       )}
     </div>
   </section>
+
+  <script is:inline>
+    var d = document,
+      w = "https://tally.so/widgets/embed.js",
+      v = function () {
+        "undefined" != typeof Tally
+          ? Tally.loadEmbeds()
+          : d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (e) {
+              e.src = e.dataset.tallySrc;
+            });
+      };
+    if ("undefined" != typeof Tally) v();
+    else if (d.querySelector('script[src="' + w + '"]') == null) {
+      var s = d.createElement("script");
+      (s.src = w), (s.onload = v), (s.onerror = v), d.body.appendChild(s);
+    }
+  </script>
 
   {wishes.length > 0 && (
     <>
