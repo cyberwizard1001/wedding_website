@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { withBase } from '../utils/base';
+---
+
+<Layout title="Invitation | Nirmal & Sumi">
+
+  <section class="text-center py-20 px-6">
+    <h1 class="section-title">The Invitation</h1>
+    <div class="section-divider max-w-xs mx-auto mt-6">
+      <span class="divider-motif">❋</span>
+    </div>
+  </section>
+
+  <section class="pb-16 px-6 flex flex-col items-center">
+    <div class="w-full max-w-lg">
+      <img
+        src={withBase('/invite.png')}
+        alt="Nirmal & Sumi Wedding Invitation"
+        class="w-full shadow-xl rounded-sm border border-gold border-opacity-20"
+      />
+    </div>
+  </section>
+
+  <section class="text-center pb-20 px-6">
+    <p class="font-sans text-xs tracking-widest uppercase text-brown-light mb-6">We'd love to see you there</p>
+    <a href={withBase('/rsvp')} class="btn-primary">RSVP Now</a>
+  </section>
+
+</Layout>

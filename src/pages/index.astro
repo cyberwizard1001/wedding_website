@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import AddToCalendar from '../components/AddToCalendar.astro';
+import Monogram from '../components/Monogram.astro';
 import { withBase } from '../utils/base';
 ---
 
@@ -12,19 +13,19 @@ import { withBase } from '../utils/base';
     <div class="absolute bottom-8 left-8 text-gold opacity-30 text-6xl font-serif leading-none select-none" style="transform: scaleY(-1)">❧</div>
     <div class="absolute bottom-8 right-8 text-gold opacity-30 text-6xl font-serif leading-none select-none" style="transform: rotate(180deg)">❧</div>
 
-    <p class="font-sans text-xs tracking-[0.4em] uppercase text-brown-light mb-8">
+    <p class="eyebrow mb-8">
       Please join us as we celebrate
     </p>
 
-    <h1 class="font-serif font-light text-maroon mb-2" style="font-size: clamp(3.5rem, 10vw, 7rem); line-height: 1.05;">
+    <h1 class="font-serif font-medium text-maroon mb-2" style="font-size: clamp(3.5rem, 10vw, 7rem); line-height: 1.05;">
       Nirmal
     </h1>
     <div class="flex items-center gap-6 my-2">
-      <span class="h-px w-16 md:w-32 bg-gold opacity-60 block"></span>
-      <span class="text-gold text-3xl">✦</span>
-      <span class="h-px w-16 md:w-32 bg-gold opacity-60 block"></span>
+      <span class="h-px w-16 md:w-32 bg-gold opacity-70 block"></span>
+      <Monogram class="w-12 h-12 md:w-14 md:h-14" />
+      <span class="h-px w-16 md:w-32 bg-gold opacity-70 block"></span>
     </div>
-    <h1 class="font-serif font-light text-maroon mb-10" style="font-size: clamp(3.5rem, 10vw, 7rem); line-height: 1.05;">
+    <h1 class="font-serif font-medium text-maroon mb-10" style="font-size: clamp(3.5rem, 10vw, 7rem); line-height: 1.05;">
       Sumi
     </h1>
 
@@ -33,13 +34,13 @@ import { withBase } from '../utils/base';
     </p>
 
     <div class="flex flex-col sm:flex-row gap-6 mb-12">
-      <div class="card text-center px-10 py-6">
-        <p class="font-sans text-xs tracking-widest uppercase text-gold mb-2">Reception</p>
+      <div class="card text-center px-10 py-6 border-t-2 border-t-gold">
+        <p class="eyebrow mb-2">Reception</p>
         <p class="font-serif text-2xl text-maroon">Sunday, 6th September</p>
         <p class="font-sans text-sm text-brown-light mt-1">6:30 pm – 9:30 pm</p>
       </div>
-      <div class="card text-center px-10 py-6">
-        <p class="font-sans text-xs tracking-widest uppercase text-gold mb-2">Wedding Ceremony</p>
+      <div class="card text-center px-10 py-6 border-t-2 border-t-gold bg-maroon/5">
+        <p class="eyebrow mb-2">Wedding Ceremony</p>
         <p class="font-serif text-2xl text-maroon">Monday, 7th September</p>
         <p class="font-sans text-sm text-brown-light mt-1">9:00 am – 10:30 am</p>
       </div>
@@ -55,20 +56,20 @@ import { withBase } from '../utils/base';
 
     <div id="countdown" class="flex gap-6 md:gap-10 mb-12">
       <div class="text-center">
-        <p id="days" class="font-serif text-5xl text-maroon font-light">--</p>
-        <p class="font-sans text-xs tracking-widest uppercase text-brown-light mt-1">Days</p>
+        <p id="days" class="font-serif text-5xl text-maroon font-medium">--</p>
+        <p class="eyebrow mt-1">Days</p>
       </div>
       <div class="text-center">
-        <p id="hours" class="font-serif text-5xl text-maroon font-light">--</p>
-        <p class="font-sans text-xs tracking-widest uppercase text-brown-light mt-1">Hours</p>
+        <p id="hours" class="font-serif text-5xl text-maroon font-medium">--</p>
+        <p class="eyebrow mt-1">Hours</p>
       </div>
       <div class="text-center">
-        <p id="minutes" class="font-serif text-5xl text-maroon font-light">--</p>
-        <p class="font-sans text-xs tracking-widest uppercase text-brown-light mt-1">Minutes</p>
+        <p id="minutes" class="font-serif text-5xl text-maroon font-medium">--</p>
+        <p class="eyebrow mt-1">Minutes</p>
       </div>
       <div class="text-center">
-        <p id="seconds" class="font-serif text-5xl text-maroon font-light">--</p>
-        <p class="font-sans text-xs tracking-widest uppercase text-brown-light mt-1">Seconds</p>
+        <p id="seconds" class="font-serif text-5xl text-maroon font-medium">--</p>
+        <p class="eyebrow mt-1">Seconds</p>
       </div>
     </div>
 
@@ -76,25 +77,43 @@ import { withBase } from '../utils/base';
   </section>
 
   <div class="section-divider max-w-3xl mx-auto px-6">
-    <span class="divider-motif">❋</span>
+    <Monogram class="w-7 h-7" />
   </div>
 
   <section class="max-w-5xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
     {[
-      { href: '/our-story', icon: '♥', title: 'Our Story', desc: 'How two worlds became one' },
-      { href: '/schedule', icon: '◆', title: 'Schedule', desc: 'The full programme across both days' },
-      { href: '/travel', icon: '✈', title: 'Travel & Stay', desc: 'Getting to Coimbatore & where to stay' },
-      { href: '/registry', icon: '◈', title: 'Registry', desc: 'Thoughtful gifts we would cherish' },
+      { href: '/invitation', icon: '♥', title: 'Invitation', desc: 'How two worlds became one', accent: 'gold' },
+      { href: '/schedule', icon: '◆', title: 'Schedule', desc: 'The full programme across both days', accent: 'maroon' },
+      { href: '/travel', icon: '✈', title: 'Travel & Stay', desc: 'Getting to Coimbatore & where to stay', accent: 'gold' },
+      { href: '/registry', icon: '◈', title: 'Registry', desc: 'Thoughtful gifts we would cherish', accent: 'maroon' },
     ].map(card => (
       <a
         href={withBase(card.href)}
-        class="card group text-center hover:border-gold hover:border-opacity-70 transition-all duration-300 hover:shadow-md"
+        class={`card group text-center hover:border-opacity-70 transition-all duration-300 hover:shadow-md ${card.accent === 'gold' ? 'hover:border-gold' : 'hover:border-maroon'}`}
       >
-        <p class="text-gold text-2xl mb-3 group-hover:scale-110 transition-transform duration-300">{card.icon}</p>
+        <p class={`text-2xl mb-3 group-hover:scale-110 transition-transform duration-300 ${card.accent === 'gold' ? 'text-gold' : 'text-maroon'}`}>{card.icon}</p>
         <p class="font-serif text-xl text-maroon mb-2">{card.title}</p>
         <p class="font-sans text-sm text-brown-light leading-relaxed">{card.desc}</p>
       </a>
     ))}
+  </section>
+
+  <div class="section-divider max-w-3xl mx-auto px-6">
+    <Monogram class="w-7 h-7" />
+  </div>
+
+  <section class="max-w-md mx-auto px-6 py-14">
+    <p class="eyebrow text-center mb-7">A few lines, for us</p>
+    <div class="flex gap-4">
+      <span class="text-gold text-2xl leading-none font-serif select-none shrink-0 mt-0.5">❧</span>
+      <div class="font-sans text-[15px] md:text-base text-brown-mid leading-[2] tracking-wide">
+        <p>A story of two people,</p>
+        <p>separated by everything geography could throw at them,</p>
+        <p>making quiet sacrifices, waiting for the world to catch up.</p>
+        <p>But we stayed —</p>
+        <p class="text-maroon font-serif italic text-lg mt-1">and this is where the goodbyes end.</p>
+      </div>
+    </div>
   </section>
 
   <script>
