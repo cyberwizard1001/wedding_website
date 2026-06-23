@@ -1,62 +1,67 @@
 [
   {
-    "name": "Dinner Set (8 persons)",
-    "description": "A complete ceramic or porcelain dinner set for 8, we're setting up a proper home together.",
-    "priceRange": "₹8,000 – ₹15,000"
+    "name": "Knife Set + Block + Chopping Boards",
+    "description": "A good knife set with a block, plus a couple of sturdy chopping boards for everyday cooking."
   },
   {
-    "name": "KitchenAid Stand Mixer",
-    "description": "For all the baking adventures we've been planning. Any colour works!",
-    "priceRange": "₹20,000 – ₹35,000"
+    "name": "Le Creuset Pot",
+    "description": "A Le Creuset (or similar) Dutch oven for slow cooking and everyday meals."
   },
   {
-    "name": "Instant Pot / Pressure Cooker",
-    "description": "A quality electric pressure cooker or Instant Pot for everyday South Indian cooking.",
-    "priceRange": "₹5,000 – ₹10,000"
+    "name": "Instant Pot / Air Fryer + Rice Cooker",
+    "description": "An Instant Pot or air fryer, and a rice cooker, for quick everyday cooking.",
+    "claimed": true
   },
   {
-    "name": "Coffee Machine",
-    "description": "We run on filter coffee. A good drip or bean-to-cup machine would be a dream.",
-    "priceRange": "₹8,000 – ₹20,000"
+    "name": "IPL Device",
+    "description": "An IPL hair removal device."
   },
   {
-    "name": "Art for the Home",
-    "description": "A piece of original art (painting, print, or textile) that could live on our walls.",
-    "priceRange": "₹3,000 – ₹10,000"
+    "name": "Fry Pans",
+    "description": "A set of good quality fry pans in a couple of sizes."
   },
   {
-    "name": "Hotel Stay / Weekend Getaway",
-    "description": "A contribution towards a mini-honeymoon or weekend escape. Any amount is welcome.",
-    "priceRange": "₹5,000+"
+    "name": "Food Containers",
+    "description": "A set of airtight food storage containers for the kitchen and fridge."
   },
   {
-    "name": "Cutlery Set",
-    "description": "A proper set of stainless steel or silver-plated cutlery for everyday use and hosting.",
-    "priceRange": "₹3,000 – ₹8,000"
+    "name": "Money! Honeymoon / Start-up Funds",
+    "description": "A cash contribution towards our honeymoon or setting up our home together."
   },
   {
-    "name": "Bookshelf / Books",
-    "description": "We love to read. A beautiful bookshelf, or a curated stack of books you love and think we'd love too.",
-    "priceRange": "₹2,000 – ₹12,000"
+    "name": "Gaming Console + 2 Controllers",
+    "description": "A current-gen console with two controllers for evenings in together."
   },
   {
-    "name": "Indoor Plants & Pots",
-    "description": "We'd love to fill our home with greenery. Potted plants or a set of beautiful ceramic planters.",
-    "priceRange": "₹1,500 – ₹5,000"
+    "name": "Towel Sets & Bath Sheets",
+    "description": "High quality towel sets and large bath sheets for the home."
   },
   {
-    "name": "Linen Set (Bedsheets & Pillowcases)",
-    "description": "High thread count cotton or linen bedsheets, king or queen size.",
-    "priceRange": "₹4,000 – ₹10,000"
+    "name": "Gift Cards (UK & India)",
+    "description": "Gift cards we can actually use, ones that work in both the UK and India. Many high street vouchers are region-locked, so please check before buying. Honestly, cash is even easier for us."
   },
   {
-    "name": "Cast Iron Cookware",
-    "description": "A Lodge or Le Creuset cast iron skillet or Dutch oven for slow cooking.",
-    "priceRange": "₹5,000 – ₹18,000"
+    "name": "Air Purifier",
+    "description": "A good air purifier for the home."
+  },
+  {
+    "name": "Smart Home Devices",
+    "description": "Smart home gadgets, Matter-compatible please, we'd rather not be locked into one ecosystem."
+  },
+  {
+    "name": "Luggage",
+    "description": "A set of sturdy suitcases or travel bags for our trips together."
+  },
+  {
+    "name": "Hawkins Pressure Cooker",
+    "description": "A Hawkins pressure cooker for everyday South Indian cooking."
+  },
+  {
+    "name": "Traditional Filter Coffee Machine",
+    "description": "A good filter coffee machine or traditional South Indian filter coffee set."
   },
   {
     "name": "Contribution to Our Home",
-    "description": "If you'd like to give us a cash gift towards setting up our home, we'd be truly grateful. We'll put it towards something we'll use every day.",
-    "priceRange": "Any amount"
+    "description": "If you'd like to give us a cash gift towards setting up our home, we'd be truly grateful. We'll put it towards something we'll use every day."
   }
 ]

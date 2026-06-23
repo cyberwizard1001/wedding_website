@@ -28,7 +28,7 @@ npm run preview  # preview production build
 
 `src/data/registry.json` is the source of truth for the Registry page — no code change needed to add, remove, or edit items.
 
-- Each entry needs `name`, `description`, `priceRange`.
+- Each entry needs `name`, `description`. No `priceRange` (removed from display).
 - Omit `claimed` (or leave it out) for an open item; add `"claimed": true` once someone's claimed it.
 - No `id` field — order in the array is the display order.
 - Edit the JSON, commit, push — Cloudflare Pages rebuilds and the live site updates automatically.
